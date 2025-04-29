@@ -11,7 +11,7 @@ class Api::V1::SubscriptionPlansController < ApplicationController
 
         render json: SubscriptionPlanSerializer.new(
           plan,
-          include: [:teas, { customer_subscriptions: [:customer] }]
+          include: [:teas, :customer_subscriptions]
         ), status: :ok
       end
 end

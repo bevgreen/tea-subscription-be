@@ -1,5 +1,7 @@
-class CustomerSubscriptionSerialzier
+class CustomerSubscriptionSerializer
     include JSONAPI::Serializer
 
-    attributes :
+    attributes :status
+    belongs_to :customer
+    belongs_to :subscription_plan
 end
