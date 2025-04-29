@@ -25,3 +25,19 @@ CustomerSubscription.create!(customer: customer1, subscription_plan: sweet_tooth
 CustomerSubscription.create!(customer: customer2, subscription_plan: healthy_plan, status: "active", start_date: DateTime.now)
 CustomerSubscription.create!(customer: customer3, subscription_plan: caffeine_free_plan, status: "active", start_date: DateTime.now)
 CustomerSubscription.create!(customer: customer4, subscription_plan: spicy_tea_plan, status: "inactive", start_date: DateTime.now)
+
+#subscription plan teas
+SubscriptionPlanTea.create!(subscription_plan: caffeine_free_plan, tea: herbal_tea)
+SubscriptionPlanTea.create!(subscription_plan: caffeine_free_plan, tea: rooibos_tea)
+SubscriptionPlanTea.create!(subscription_plan: sweet_tooth_plan, tea: rooibos_tea)
+SubscriptionPlanTea.create!(subscription_plan: sweet_tooth_plan, tea: chai_tea)
+SubscriptionPlanTea.create!(subscription_plan: world_traveler_plan, tea: oolong_tea)
+SubscriptionPlanTea.create!(subscription_plan: world_traveler_plan, tea: white_tea)
+SubscriptionPlanTea.create!(subscription_plan: world_traveler_plan, tea: rooibos_tea)
+SubscriptionPlanTea.create!(subscription_plan: world_traveler_plan, tea: green_tea)
+SubscriptionPlanTea.create!(subscription_plan: spicy_tea_plan, tea: black_tea)
+SubscriptionPlanTea.create!(subscription_plan: spicy_tea_plan, tea: rooibos_tea)
+SubscriptionPlanTea.create!(subscription_plan: spicy_tea_plan, tea: chai_tea)
+SubscriptionPlanTea.create!(subscription_plan: healthy_plan, tea: green_tea)
+SubscriptionPlanTea.create!(subscription_plan: healthy_plan, tea: white_tea)
+
