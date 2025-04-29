@@ -20,4 +20,8 @@ customer2 = Customer.create!(first_name: "Holly", last_name: "Madison", email: "
 customer3 = Customer.create!(first_name: "Bridget", last_name: "Marquardt", email: "bridget33@gmail.com", address: "314 River Falls Lane, Chicago, IL, 60007 ")
 customer4 = Customer.create!(first_name: "Dean", last_name: "Winchester", email: "impala67@gmail.com", address: "300 W 10th St, Lawrence, KS, 66044")
 
-#
+#customer subscriptions
+CustomerSubscription.create!(customer: customer1, subscription_plan: sweet_tooth_plan, status: "active", start_date: DateTime.now )
+CustomerSubscription.create!(customer: customer2, subscription_plan: healthy_plan, status: "active", start_date: DateTime.now)
+CustomerSubscription.create!(customer: customer3, subscription_plan: caffeine_free_plan, status: "active", start_date: DateTime.now)
+CustomerSubscription.create!(customer: customer4, subscription_plan: spicy_tea_plan, status: "inactive", start_date: DateTime.now)
