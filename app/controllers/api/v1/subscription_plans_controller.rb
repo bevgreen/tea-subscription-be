@@ -1,7 +1,7 @@
 class Api::V1::SubscriptionPlansController < ApplicationController
     def index
-        plans = SubscriptionPlan.includes(:teas).all
-        render json: SubscriptionPlanSerializer.new(plans, include: [:teas]), status: :ok
+        plans = SubscriptionPlan.all
+        render json: SubscriptionPlanSerializer.new(plans), status: :ok
     end
 
     def show
@@ -11,7 +11,7 @@ class Api::V1::SubscriptionPlansController < ApplicationController
 
         render json: SubscriptionPlanSerializer.new(
           plan,
-          include: [:teas, :customer_subscriptions]
+          include: ['teas', 'customer_subscriptions.customer']
         ), status: :ok
       end
 end
