@@ -15,4 +15,9 @@ sweet_tooth_plan = SubscriptionPlan.create!(title: "Collection of Naturally Swee
 healthy_plan = SubscriptionPlan.create!(title: "Healthy Green and White Teas", price: 20.00, frequency: "Weekly")
 
 #customers
+customer1 = Customer.create!(first_name: "Beverly", last_name: "Green", email: "bev@gmail.com", address: "620 Beverly Blvd, Beverly Hills, CA 90210 ")
+customer2 = Customer.create!(first_name: "Holly", last_name: "Madison", email: "hollysworld@gmail.com", address: "123 Holmby Hills Drive, Los Angeles, CA 90024")
+customer3 = Customer.create!(first_name: "Bridget", last_name: "Marquardt", email: "bridget33@gmail.com", address: "314 River Falls Lane, Chicago, IL, 60007 ")
+customer4 = Customer.create!(first_name: "Dean", last_name: "Winchester", email: "impala67@gmail.com", address: "300 W 10th St, Lawrence, KS, 66044")
 
+#
