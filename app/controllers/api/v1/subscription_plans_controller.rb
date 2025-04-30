@@ -13,5 +13,5 @@ class Api::V1::SubscriptionPlansController < ApplicationController
           plan,
           include: ['teas', 'customer_subscriptions.customer']
         ), status: :ok
-      end
+    end
 end
