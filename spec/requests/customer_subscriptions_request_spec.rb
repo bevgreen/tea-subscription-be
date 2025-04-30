@@ -9,27 +9,33 @@ RSpec.describe "Api::V1::CustomerSubscriptions", type: :request do
 
   describe 'PATCH /api/v1/customer_subscriptions/:id' do
     it 'updates the subscription status to inactive' do
-      patch "/api/v1/customer_subscriptions/#{@subscription.id}", params: { status: 'inactive' }
-        # binding.pry
+      patch "/api/v1/customer_subscriptions/#{@subscription.id}", 
+        params: { customer_subscription: { status: 'inactive' } },
+        as: :json
+  
       expect(response).to have_http_status(:ok)
       @subscription.reload
       expect(@subscription.status).to eq('inactive')
     end
-
+  
     it 'returns an error when the status is invalid' do
-      patch "/api/v1/customer_subscriptions/#{@subscription.id}", params: { status: 'paused' }
-
+      patch "/api/v1/customer_subscriptions/#{@subscription.id}", 
+        params: { customer_subscription: { status: 'paused' } },
+        as: :json
+  
       expect(response).to have_http_status(:unprocessable_entity)
       body = JSON.parse(response.body, symbolize_names: true)
       expect(body[:errors]).to include("Status is not a valid status")
     end
-
+  
     it 'returns an error when the status is blank' do
-      patch "/api/v1/customer_subscriptions/#{@subscription.id}", params: { status: '' }
-
+      patch "/api/v1/customer_subscriptions/#{@subscription.id}", 
+        params: { customer_subscription: { status: '' } },
+        as: :json
+  
       expect(response).to have_http_status(:unprocessable_entity)
       body = JSON.parse(response.body, symbolize_names: true)
       expect(body[:errors]).to include("Status is not a valid status")
     end
-  end
+  end  
 end

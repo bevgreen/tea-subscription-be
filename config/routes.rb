@@ -9,10 +9,9 @@ Rails.application.routes.draw do
   # root "posts#index"
   namespace :api do
     namespace :v1 do
+      resources :teas, only: [:index]
       resources :customer_subscriptions, only: [:update] 
-      resources :subscription_plans, only: [:index, :show]
-           #index route = GET api/v1/subscription_plans
-           #show route = GET /api/v1/subscription_plans/:id
+      resources :subscription_plans, only: [:index, :show]  
     end
   end
 end
