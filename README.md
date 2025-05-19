@@ -20,6 +20,7 @@ This is the backend repo for the Kettle On Tea Subscription website. This repo h
 2. Open the directory: `cd tea-subscription-be`
 3. Install required gems: `bundler install`
 4. Setup the database: `bundle exec rails db:{create,migrate,seed}`
+5. Run the server with `rails s` command
 
 ### Running Test Suite
 1. To run all tests: `bundle exec rspec`
